@@ -35,7 +35,7 @@ export function Footer() {
             <h2 className="font-bold mb-4">Contact Info</h2>
             <ul className="flex flex-col gap-2">
               <li>Phone: <Link href="/">+63 999 9999</Link></li>
-              <li>Email: <Link href="/about">email@test.com</Link></li>
+              <li>Email: <Link href="/about">gianlagahit004@gmail.com</Link></li>
               <li><Link href="/projects">Visit Github</Link></li>
             </ul>
           </div>

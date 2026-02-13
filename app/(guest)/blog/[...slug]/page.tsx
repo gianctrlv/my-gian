@@ -1,70 +1,54 @@
-import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
-export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-
-  // As if Response Data from the Backend
-  const BlogData = [
+export default function BlogPage() {
+  // Sample blog posts
+  const posts = [
     {
       id: "my-first-blog",
       title: "My First Blog",
-      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      author: "Clifford",
-      publishedDate: "January 31, 2026",
-      commentsData: [
-        "Hello",
-        "Nice",
-        "Good Post"
-      ]
+      summary: "Learn how to start your first blog and write content that engages readers.",
+      date: "Feb 10, 2026",
     },
-  ]
+    {
+      id: "react-hooks-guide",
+      title: "Understanding React Hooks",
+      summary: "Simplify state and side effects in React with Hooks.",
+      date: "Feb 12, 2026",
+    },
+    {
+      id: "tailwind-css-tips",
+      title: "Tailwind CSS Tips",
+      summary: "Build beautiful, responsive UIs faster with Tailwind CSS.",
+      date: "Feb 13, 2026",
+    },
+  ];
 
-  // Check if Index 1 Slug is Comments
-  if (slug[1] === "comments") {
-    return (
-      <div className="container mx-auto px-6 pt-10">
-        <Link href="./" className="flex items-center">
-          <ArrowLeft />
-          Back to Blog
-        </Link>
-        <h1 className="font-bold mb-4">{BlogData[0].title} Comments</h1>
-        <div className="space-y-2">
-          {BlogData[0].commentsData.map((comment) => (
-            <div key={comment} className="border rounded-md bg-gray-100 p-5">{comment}</div>
-          ))}
-        </div>
-      </div>
-    )
-  }
-
-  // Validate Blog ID and Show not found if not valid blog
-  const isValidBlog: Boolean = BlogData[0].id === slug[0];
-  if (!isValidBlog) {
-    return (
-      <div className="flex justify-center pt-20">
-        <p className="font-bold text-2xl text-gray-500">Blog Not Found</p>
-      </div>
-    )
-  }
-
-  // Display actual blog
   return (
-    <div className="container mx-auto px-6 pt-10 space-y-4">
-      <h1 className="font-bold">{BlogData[0].title}</h1>
-      <p>
-        {BlogData[0].content}
-      </p>
+    <main className="bg-gray-50 min-h-screen">
+      {/* Header */}
+      <header className="bg-white shadow-md py-6">
+        <h1 className="text-4xl font-bold text-center text-gray-800">My Blog</h1>
+      </header>
 
-      <div>
-        <p>Author: {BlogData[0].author}</p>
-        <p>Published Date: {BlogData[0].publishedDate}</p>
-      </div>
+      {/* Blog Posts */}
+      <section className="max-w-4xl mx-auto px-4 py-10 grid gap-8">
+        {posts.map((post) => (
+          <article
+            key={post.id}
+            className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300"
+          >
+            <h2 className="text-2xl font-semibold text-gray-800">{post.title}</h2>
+            <p className="text-gray-600 mt-2">{post.summary}</p>
+            <span className="text-gray-400 text-sm mt-3 block">{post.date}</span>
 
-      <Link href={slug + "/comments "}>
-        <Button>View Comments</Button>
-      </Link>
-    </div>
-  )
+            <Link href={`/blog/${post.id}`}>
+              <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                Read More
+              </button>
+            </Link>
+          </article>
+        ))}
+      </section>
+    </main>
+  );
 }

@@ -7,7 +7,7 @@ export default function HomePage() {
         {/* LEFT SIDE: IMAGE */}
         <div style={styles.imageContainer}>
           <img
-            src="https://scontent-sin6-1.xx.fbcdn.net/v/t39.30808-6/475261090_1410320823360191_2052596759209340931_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=B14VwkLtMkUQ7kNvwGY-jM4&_nc_oc=AdnUBiOiC55aIpbx0KhSqR2g8nrYj54NP3KkgWgxfyEcn8yQJhooRnJOStEHkF0Qw58&_nc_zt=23&_nc_ht=scontent-sin6-1.xx&_nc_gid=NOywAtwxs_zxrOtVD7c99Q&oh=00_AfvFGqDmZOM0ByjOro3qZ-QtXSPJbW18h4t7JUfdqJ7QCw&oe=69943912" // Replace with your image link
+            src="https://scontent.fceb9-1.fna.fbcdn.net/v/t39.30808-6/633926039_122108622597236043_8032364314136937697_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=aY1j8vULN40Q7kNvwG9J4Bb&_nc_oc=AdknLz-oVmi7c8bkI7dNQDehpvqArKEkj3Spo36rHOumrvT1_FfbnXX5DyRploMreOE&_nc_zt=23&_nc_ht=scontent.fceb9-1.fna&_nc_gid=2VWGA03_1louDZWk7RiVVA&oh=00_AfuingNmVR15a3bDsH2j4loygRzY1gCVKTH2vp37-Eqnxg&oe=69946951" // Replace with your image link
             alt="Gian Lagahit"
             style={styles.profileImage}
           />
@@ -19,18 +19,14 @@ export default function HomePage() {
           
           <div style={styles.descriptionBox}>
             <p style={styles.bioText}>
-              I am <strong>Gian Lagahit</strong>, a project manager with experience in planning, 
-              coordinating, and delivering projects on time and within scope. I excel at bridging 
-              communication between stakeholders and development teams, ensuring goals are 
-              clearly defined and efficiently executed. With strong leadership, organization, 
-              and problem-solving skills, I focus on driving team collaboration, managing risks, 
-              and delivering high-quality results that align with business objectives.
+              I am <strong>Gian Lagahit</strong>, a passionate IT student from Cordova. I enjoy programming, web development, and exploring new technologies. I am motivated to create projects that solve real-world problems and continuously improve my technical skills.
+
             </p>
           </div>
 
           {/* SOCIAL ICON */}
           <div style={styles.socialContainer}>
-            <a href="YOUR_FACEBOOK_LINK" style={styles.socialIcon}>
+            <a href="https://www.facebook.com/shrekako" style={styles.socialIcon}>
               <span style={styles.iconCircle}>f</span>
             </a>
           </div>
