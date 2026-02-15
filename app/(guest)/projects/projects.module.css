@@ -15,6 +15,7 @@
   padding: 15px;
   border-radius: 10px;
   transition: transform 0.2s;
+  overflow: hidden; /* ensures images don't overflow the card */
 }
 
 .projectCard:hover {
@@ -22,6 +23,8 @@
 }
 
 .projectImage {
+  width: 100%;
+  height: 200px; /* same height for all images */
+  object-fit: cover; /* fills the image area without stretching */
   border-radius: 10px;
-  object-fit: cover;
 }

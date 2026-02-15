@@ -2,6 +2,9 @@
   text-align: center;
   margin-top: 80px;
   padding: 20px;
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .title {
@@ -13,39 +16,43 @@
   margin-bottom: 20px;
 }
 
+/* Button using global variables */
 .button {
   width: 250px;
   padding: 12px;
-  background-color: #111;
-  color: white;
-  border: 1px solid #444;
-  border-radius: 8px;
+  background-color: var(--card);
+  color: var(--card-foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   font-size: 15px;
 }
 
 .button:hover {
-  background-color: #333;
+  filter: brightness(1.1);
 }
 
+/* Content box using global variables */
 .content {
   margin-top: 15px;
-  background-color: #111;
-  border: 1px solid #333;
+  background-color: var(--card);
+  border: 1px solid var(--border);
   padding: 20px;
-  border-radius: 10px;
+  border-radius: var(--radius);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
   animation: fadeIn 0.3s ease-in-out;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .content ul {
   padding-left: 20px;
 }
 
+/* Fade-in animation */
 @keyframes fadeIn {
   from {
     opacity: 0;

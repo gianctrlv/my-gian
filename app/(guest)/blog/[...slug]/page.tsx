@@ -24,10 +24,10 @@ export default function BlogPage() {
   ];
 
   return (
-    <main className="bg-gray-50 min-h-screen">
+    <main className="min-h-screen bg-background text-foreground transition-colors duration-300">
       {/* Header */}
-      <header className="bg-white shadow-md py-6">
-        <h1 className="text-4xl font-bold text-center text-gray-800">My Blog</h1>
+      <header className="shadow-md py-6 bg-card text-card-foreground dark:bg-card dark:text-card-foreground transition-colors duration-300">
+        <h1 className="text-4xl font-bold text-center">My Blog</h1>
       </header>
 
       {/* Blog Posts */}
@@ -35,14 +35,14 @@ export default function BlogPage() {
         {posts.map((post) => (
           <article
             key={post.id}
-            className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300"
+            className="bg-card text-card-foreground p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 dark:bg-card dark:text-card-foreground"
           >
-            <h2 className="text-2xl font-semibold text-gray-800">{post.title}</h2>
-            <p className="text-gray-600 mt-2">{post.summary}</p>
-            <span className="text-gray-400 text-sm mt-3 block">{post.date}</span>
+            <h2 className="text-2xl font-semibold">{post.title}</h2>
+            <p className="text-muted-foreground mt-2">{post.summary}</p>
+            <span className="text-muted text-sm mt-3 block">{post.date}</span>
 
             <Link href={`/blog/${post.id}`}>
-              <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+              <button className="mt-4 px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90 transition-colors duration-200">
                 Read More
               </button>
             </Link>

@@ -6,11 +6,7 @@ export default function AboutPage() {
   const [openSection, setOpenSection] = useState<string | null>(null);
 
   const toggleSection = (section: string) => {
-    if (openSection === section) {
-      setOpenSection(null); // close if already open
-    } else {
-      setOpenSection(section); // open clicked section
-    }
+    setOpenSection(openSection === section ? null : section);
   };
 
   return (
@@ -19,13 +15,9 @@ export default function AboutPage() {
 
       {/* MY INFO */}
       <div className={styles.section}>
-        <button
-          className={styles.button}
-          onClick={() => toggleSection("info")}
-        >
+        <button className={styles.button} onClick={() => toggleSection("info")}>
           My Info
         </button>
-
         {openSection === "info" && (
           <div className={styles.content}>
             <p>
@@ -40,13 +32,9 @@ export default function AboutPage() {
 
       {/* MY HOBBIES */}
       <div className={styles.section}>
-        <button
-          className={styles.button}
-          onClick={() => toggleSection("hobbies")}
-        >
+        <button className={styles.button} onClick={() => toggleSection("hobbies")}>
           My Hobbies
         </button>
-
         {openSection === "hobbies" && (
           <div className={styles.content}>
             <ul>
@@ -61,13 +49,9 @@ export default function AboutPage() {
 
       {/* MY GOALS */}
       <div className={styles.section}>
-        <button
-          className={styles.button}
-          onClick={() => toggleSection("goals")}
-        >
+        <button className={styles.button} onClick={() => toggleSection("goals")}>
           My Goals
         </button>
-
         {openSection === "goals" && (
           <div className={styles.content}>
             <ul>
@@ -82,13 +66,9 @@ export default function AboutPage() {
 
       {/* MY PROJECTS */}
       <div className={styles.section}>
-        <button
-          className={styles.button}
-          onClick={() => toggleSection("projects")}
-        >
+        <button className={styles.button} onClick={() => toggleSection("projects")}>
           My Projects
         </button>
-
         {openSection === "projects" && (
           <div className={styles.content}>
             <ul>
